@@ -3,3 +3,5 @@ qemu-m68k.tar.xz filter=lfs diff=lfs merge=lfs -text
 aarch64-none-elf-llvm.tar.xz filter=lfs diff=lfs merge=lfs -text
 m68k-unknown-elf.tar.xz filter=lfs diff=lfs merge=lfs -text
 msp430-unknown-elf.tar.xz filter=lfs diff=lfs merge=lfs -text
+qemu-nios2-2.tar.xz filter=lfs diff=lfs merge=lfs -text
+qemu-arc.tar.xz filter=lfs diff=lfs merge=lfs -text
