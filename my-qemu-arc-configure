@@ -1,0 +1,8 @@
+#!/bin/sh
+../configure \
+    --target-list=arc-softmmu,arc64-softmmu \
+    --disable-werror \
+    --without-default-features \
+    --prefix=/opt/qemu-arc
+
+
