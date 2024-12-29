@@ -1,0 +1,5 @@
+../configure --target-list=m68k-softmmu \
+  --disable-werror \
+  --disable-docs \
+  --prefix=/opt/qemu-m68k \
+  --without-default-features "$@"
