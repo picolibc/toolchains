@@ -1,0 +1,2 @@
+#!/bin/sh
+../configure --target=m68k-unknown-elf --prefix=/opt/m68k --disable-sim

@@ -1,0 +1,55 @@
+#!/usr/bin/make -f
+
+TARGET=m68k-unknown-elf
+
+TARGET_TOOLS=\
+	AR_FOR_TARGET=$(TARGET)-ar \
+	AS_FOR_TARGET=$(TARGET)-as \
+	LD_FOR_TARGET=$(TARGET)-ld \
+	NM_FOR_TARGET=$(TARGET)-nm \
+	OBJDUMP_FOR_TARGET=$(TARGET)-objdump \
+	RANLIB_FOR_TARGET=$(TARGET)-ranlib \
+	READELF_FOR_TARGET=$(TARGET)-readelf \
+	STRIP_FOR_TARGET=$(TARGET)-strip
+
+CONFIGURE_GCC_FLAGS = \
+	--mandir=/usr/share/man \
+	--enable-languages=c,c++,lto \
+	--enable-multilib \
+	--enable-multilib-space \
+	--disable-gcov \
+	--disable-decimal-float \
+	--disable-libffi \
+	--disable-libgomp \
+	--disable-libmudflap \
+	--disable-libquadmath \
+	--disable-libssp \
+	--disable-libstdcxx-pch \
+	--disable-nls \
+	--disable-shared \
+	--disable-threads \
+	--enable-tls \
+	--target=$(TARGET) \
+	--with-system-zlib \
+	--with-gnu-as \
+	--with-gnu-ld \
+	--without-included-gettext \
+	--prefix=/opt/m68k \
+	--disable-libstdcxx \
+	--host=$(DEB_HOST_GNU_TYPE) \
+	--with-headers=no \
+	--without-newlib \
+	$(MULTILIB_LIST) \
+	$(BUILDFLAGS) \
+	$(TARGET_TOOLS) \
+	SED=/bin/sed \
+	SHELL=/bin/sh \
+	BASH=/bin/bash \
+	CONFIG_SHELL=/bin/bash \
+
+do-it:
+	../configure $(CONFIGURE_GCC_FLAGS)
+
+show:
+	echo ../configure $(CONFIGURE_GCC_FLAGS)
+
