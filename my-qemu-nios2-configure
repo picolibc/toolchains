@@ -1,0 +1,5 @@
+../configure --target-list=nios2-softmmu \
+  --disable-werror \
+  --disable-docs \
+  --prefix=/opt/qemu-nios2 \
+  --without-default-features "$@"
